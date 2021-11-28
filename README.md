@@ -10,7 +10,7 @@ But it's also a software because of it's functionalities. It can :
 6. Translate many languages to Leaf.
 7. Debug Leaf code.
 8. Find memory leaks.
-9. Install packages, libraries, modules and headers from [here](www.lexip.org/leaf/install/).
+9. Install packages, libraries, modules and headers from [here](http://www.lexip.org/leaf/install/).
 10. Upload packages, libraries, modules and headers. (They are verified before uploading, but remember that there are bad people in life)
 11. And more coming soon ! ~(˘▾˘~)
 
