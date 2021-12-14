@@ -1,0 +1,22 @@
+#include std
+#include ltypes
+#include errors_primitive
+#include args
+
+
+
+template T
+void print(T s) {
+	print((string)s)
+}
+
+
+
+
+
+
+
+
+
+
+

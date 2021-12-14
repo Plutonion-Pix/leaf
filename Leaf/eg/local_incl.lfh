@@ -1,0 +1,10 @@
+#include std
+
+
+void hello_world() {
+    printf("Hello world !\n")
+}
+
+
+
+

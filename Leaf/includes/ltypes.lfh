@@ -1,0 +1,244 @@
+/*
+
+This file is pain to write.
+And I fear it could be useless.
+So, to me, to you :
+Don't fuck everything up in this file.
+
+*/
+
+#compile-info KEEP_NAMES=1
+#define __incr__ operator++
+#define __decr__ operator--
+#define __getitem__ operator[]
+#define __setitem__ operator[]=
+#define __add__ operator+
+#define __sub__ operator-
+#define __mul__ operator*
+#define __div__ operator/
+#define __pow__ operator**
+#define __mod__ operator%
+#define __and__ operator&
+#define __or__ operator|
+#define __xor__ operator^
+#define __not__ operator~
+#define __rshift__ operator>>
+#define __lshift__ operator<<
+#define __iter__ operator[:]
+
+#define __ANY_TUPLETYPE ( \
+	byte,	\
+	short,	\
+	int,	\
+	long,	\
+	ubyte,	\
+	ushort,	\
+	uint,	\
+	ulong,	\
+	char,	\
+	uchar,	\
+	float,	\
+	double,	\
+			\
+	byte*,	\
+	short*,	\
+	int*,	\
+	long*,	\
+	ubyte*,	\
+	ushort*,\
+	uint*,	\
+	ulong*,	\
+	char*,	\
+	uchar*,	\
+	float*,	\
+	double*,\
+	void*,	\
+	bool	\
+)
+#define __ANY_TEMPLATE template for T1 in __ANY_TUPLETYPE
+#define __ANY_1TEMPLATE __ANY_TEMPLATE
+#define __ANY_2TEMPLATE template for T1, T2 in __ANY_TUPLETYPE**2
+#define __ANY_3TEMPLATE template for T1, T2, T3 in __ANY_TUPLETYPE**3
+#define __ANY_4TEMPLATE template for T1, T2, T3, T4 in __ANY_TUPLETYPE**4
+#define _STDSIMPLE static inline
+#define _anyopdecl(X) __ANY_##X##TEMPLATE _STDSIMPLE
+
+class Slice {
+	int start,stop,step
+	Slice(int start = 0, int stop = 0, int step = 1) : start(start), stop(stop), step(step) {}
+	ulong makeBitMask(ubyte size) {
+		// /!\ Use only the step attribut.
+		ulong r = 0
+		for (;size!=0;size--) {
+			r |= 1
+			r << this->step
+		}
+		return r
+	}
+	void unsign(void* arr, uint length) {
+		if (this->start < 0) {
+			this->start = length+this->start // this->start is negative so it will do a substraction.
+		}
+		if (this->stop < 0) {
+			this->stop = length+this->stop
+		}
+		if (this->step < 0) {
+			this->step = abs(this->step)
+			swap(&(this->start),&(this->stop))
+		}
+	}
+}
+
+
+// This is just a multitype define object
+template class Iterator
+
+
+
+//		 SINGLE_SIMPLE_OPERATIONS		\\
+	_anyopdecl(1) T1 T1::operator++() {
+		extern C {
+			return *this++;
+		}
+	}
+	_anyopdecl(1) T1 T1::operator--() {
+		extern C {
+			return *this--;
+		}
+	}
+
+// 		 DOUBLE_SIMPLE_OPERATIONS		\\
+	_anyopdecl(2) T1 T1::operator+(T2 other) {
+		extern C {
+			return *this + other;
+		}
+	}
+	_anyopdecl(2) T1 T1::operator-(T2 other) {
+		extern C {
+			return *this - other;
+		}
+	}
+	_anyopdecl(2) T1 T1::operator*(T2 other) {
+		extern C {
+			return *this * other;
+		}
+	}
+	_anyopdecl(2) T1 T1::operator/(T2 other) {
+		extern C {
+			return *this / other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator%(T2 other) {
+		extern C {
+			return *this % other;
+		}
+	}
+
+//		 BITWISE_SIMPLE_OPERATIONS		\\
+	_anyopdecl(2) T1 T1::operator&(T2 other) {
+		extern C {
+			return *this & other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator|(T2 other) {
+		extern C {
+			return *this | other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator^(T2 other) {
+		extern C {
+			return *this ^ other;
+		}
+	}
+
+	_anyopdecl(1) T1 T1::operator~() {
+		extern C {
+			return ~*this;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator>>(T2 other) {
+		extern C {
+			return *this >> other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator<<(T2 other) {
+		extern C {
+			return *this << other;
+		}
+	}
+
+//		 LOGIC_SIMPLE_OPERATIONS		\\
+	_anyopdecl(2) T1 T1::operator&&(T2 other) {
+		extern C {
+			return *this && other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator||(T2 other) {
+		extern C {
+			return *this || other;
+		}
+	}
+
+	_anyopdecl(1) T1 T1::operator!() {
+		extern C {
+			return !*this;
+		}
+	}
+
+//		 COMPARISON_OPERATIONS			\\
+	_anyopdecl(2) T1 T1::operator==(T2 other) {
+		extern C {
+			return *this == other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator>(T2 other) {
+		extern C {
+			return *this > other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator<(T2 other) {
+		extern C {
+			return *this < other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator>=(T2 other) {
+		extern C {
+			return *this >= other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator<=(T2 other) {
+		extern C {
+			return *this <= other;
+		}
+	}
+
+	_anyopdecl(2) T1 T1::operator!=(T2 other) {
+		extern C {
+			return *this != other;
+		}
+	}
+
+// TODO : (...)_SET_OPERATIONS (+ become += in this part)
+
+
+_anyopdecl(2) T1 T1::operator=(T2 other) {
+	extern C {
+		return *this = (T1)other;
+	}
+}
+
+
+
+
+
+

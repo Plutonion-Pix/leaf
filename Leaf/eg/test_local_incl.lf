@@ -1,0 +1,14 @@
+#include "local_incl.lfh"
+
+
+
+main() {
+    hello_world()
+    exit(0)
+}
+
+
+
+
+
+

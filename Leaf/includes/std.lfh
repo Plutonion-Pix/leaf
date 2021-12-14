@@ -1,0 +1,114 @@
+extern C {
+#include <stdio.h>
+#include <stdlib.h>
+}
+
+#ifdef __i386__
+#define __arch__ x86
+#else
+#define __arch__ x64
+#endif
+
+#ifndefdefine s_inline static inline
+
+#CLASSFIX size_t s(void*)
+#CLASSFIX FILE p(CLASS_PTR)
+
+#FUNFIX int fputs(const char* str, FILE* stream)
+#FUNFIX int fputc(int chr, FILE* stream)
+#FUNFIX char* fgets(char* str, int n, FILE* stream)
+#FUNFIX int printf(const char* format)
+#FUNFIX FILE* fopen(const char* filename, const char* mode)
+#FUNFIX int fclose(FILE* stream)
+#FUNFIX int fseek(FILE* stream, long offset, int whence)
+#FUNFIX size_t fread(void* ptr, size_t size, size_t nmemb, FILE* stream)
+#FUNFIX char* tmpnam(char* str)
+#FUNFIX void* malloc(size_t size)
+#FUNFIX void* calloc(size_t nitems, size_t size)
+#FUNFIX void* realloc(void* ptr, size_t size)
+#FUNFIX void free(void* ptr)
+#FUNFIX void exit(int status) as c_exit
+#FUNFIX void* memcpy(void* dest, const void* src, size_t n)
+#FUNFIX int abs(int x)
+#CONSTFIX SEEK_SET int
+#CONSTFIX SEEK_CUR int
+#CONSTFIX SEEK_END int
+#CONSTFIX EOF int
+#CONSTFIX FILENAME_MAX int
+#CONSTFIX FOPEN_MAX int
+#CONSTFIX BUFSIZ int
+#CONSTFIX L_tmpnam int
+
+
+
+void exit(int value) {
+    c_exit(value)
+}
+
+const void* nullptr = NULL
+
+#VARFIX FILE stdout
+#VARFIX FILE stdin
+#VARFIX FILE stderr
+/*
+char fgetAt(FILE* f, int index) {
+    fseek(f,index,SEEK_SET)
+    return fgetc(f)
+}
+
+char fputAt(FILE* f, int index, char value) {
+    fseek(f,index,SEEK_SET)
+    return fputc(value,f)
+}
+
+template T
+void swap(T* v1, T* v2) {
+    register T tmp = *v1
+    *v1 = *v2
+    *v2 = tmp
+}
+
+extern C {
+    union ANY {
+        char TOUchar;
+        char* TOUcharptr;
+        byte TOUbyte;
+        short TOUshort;
+        int TOUint;
+        long long TOUlong; // Because "long long" is "long" in leaf.
+
+        unsigned char TOUchar;
+        unsigned char* TOUcharptr;
+        unsigned byte TOUbyte;
+        unsigned short TOUshort;
+        unsigned int TOUint;
+        unsigned long long TOUulong;
+
+        byte* TOUbyte_ptr;
+        short* TOUshort_ptr;
+        int* TOUint_ptr;
+        long* long TOUlong_ptr;
+
+        unsigned byte* TOUbyte_ptr;
+        unsigned short* TOUshort_ptr;
+        unsigned int* TOUint_ptr;
+        unsigned long long* TOUulong_ptr;
+
+        float TOUfloat;
+        double TOUdouble;
+
+        float* TOUfloat_ptr;
+        double* TOUdouble_ptr;
+        
+        void* TOUvoid_ptr;
+    };
+}
+
+
+
+void t_swap(ANY* v1, ANY* v2) {
+    register ANY tmp = *v1
+    *v1 = *v2
+    *v2 = tmp
+}
+*/

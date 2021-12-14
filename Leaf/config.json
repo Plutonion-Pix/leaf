@@ -1,0 +1,31 @@
+[
+    {
+        "name": "default",
+        "description": "default configuration (other configs inherit from this one)",
+        "data":{
+            "MAIN_NAME": "main",
+            "KEEP_NAMES": false,
+            "MAX_SIZE": 4,
+            "EXECUTABLE_EXTENSION": ".exe",
+            "C_MAIN_NAME":"main",
+            "keywords": [
+                "const",
+                "static"
+            ]
+        }
+    },
+    {
+        "name": "default32",
+        "description": "32bit processors specific configuration",
+        "data": {
+            "MAX_SIZE": 4
+        }
+    },
+    {
+        "name": "default64",
+        "description": "64bit processors specific configuration",
+        "data": {
+            "MAX_SIZE": 8
+        }
+    }
+]

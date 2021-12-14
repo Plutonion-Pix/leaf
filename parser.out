@@ -1,0 +1,3669 @@
+Grammar:
+
+Rule 0     S' -> statement
+Rule 1     statement -> expr
+Rule 2     statement -> <empty>
+Rule 3     expr -> BOOL
+Rule 4     expr -> INTERGER
+Rule 5     expr -> FLOAT
+Rule 6     expr -> CHAR
+Rule 7     expr -> STRING
+Rule 8     expr -> expr
+Rule 9     expr -> NAME
+Rule 10    expr -> expr EQL expr  [precedence=left, level=2]
+Rule 11    expr -> BNOT expr
+Rule 12    expr -> expr BOR expr
+Rule 13    expr -> expr BAND expr
+Rule 14    expr -> expr XOR expr
+Rule 15    expr -> NEW expr
+Rule 16    expr -> NOT expr  [precedence=left, level=5]
+Rule 17    expr -> ( expr )
+Rule 18    expr -> expr OR expr  [precedence=left, level=1]
+Rule 19    expr -> expr AND expr  [precedence=left, level=1]
+Rule 20    expr -> expr MOD expr
+Rule 21    expr -> expr DIV expr  [precedence=left, level=4]
+Rule 22    expr -> expr MUL expr  [precedence=left, level=4]
+Rule 23    expr -> expr SUB expr  [precedence=left, level=3]
+Rule 24    expr -> expr DECR  [precedence=left, level=6]
+Rule 25    expr -> expr INCR  [precedence=left, level=6]
+Rule 26    expr -> expr ADD expr  [precedence=left, level=3]
+Rule 27    expr -> expr INFEQL expr  [precedence=left, level=2]
+Rule 28    expr -> expr INF expr  [precedence=left, level=2]
+Rule 29    expr -> expr LSHIFT expr
+Rule 30    expr -> expr RSHIFT expr
+Rule 31    expr -> expr SUP expr  [precedence=left, level=2]
+Rule 32    expr -> expr SUPEQL expr  [precedence=left, level=2]
+Rule 33    expr -> expr PTRACCSS expr  [precedence=left, level=6]
+Rule 34    expr -> expr MEMBACCSS expr  [precedence=left, level=6]
+
+Terminals, with rules where they appear:
+
+(                    : 17
+)                    : 17
+ADD                  : 26
+AND                  : 19
+BAND                 : 13
+BNOT                 : 11
+BOOL                 : 3
+BOR                  : 12
+CHAR                 : 6
+DECR                 : 24
+DIV                  : 21
+EQL                  : 10
+FLOAT                : 5
+INCR                 : 25
+INF                  : 28
+INFEQL               : 27
+INTERGER             : 4
+LSHIFT               : 29
+MEMBACCSS            : 34
+MOD                  : 20
+MUL                  : 22
+NAME                 : 9
+NEW                  : 15
+NOT                  : 16
+OR                   : 18
+PTRACCSS             : 33
+RSHIFT               : 30
+STRING               : 7
+SUB                  : 23
+SUP                  : 31
+SUPEQL               : 32
+XOR                  : 14
+error                : 
+
+Nonterminals, with rules where they appear:
+
+expr                 : 1 8 10 10 11 12 12 13 13 14 14 15 16 17 18 18 19 19 20 20 21 21 22 22 23 23 24 25 26 26 27 27 28 28 29 29 30 30 31 31 32 32 33 33 34 34
+statement            : 0
+
+
+state 0
+
+    (0) S' -> . statement
+    (1) statement -> . expr
+    (2) statement -> .
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    $end            reduce using rule 2 (statement -> .)
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    statement                      shift and go to state 1
+    expr                           shift and go to state 2
+
+state 1
+
+    (0) S' -> statement .
+
+
+state 2
+
+    (1) statement -> expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for $end resolved using rule 1 (statement -> expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 1 (statement -> expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 3
+
+    (3) expr -> BOOL .
+    EQL             reduce using rule 3 (expr -> BOOL .)
+    BOR             reduce using rule 3 (expr -> BOOL .)
+    BAND            reduce using rule 3 (expr -> BOOL .)
+    XOR             reduce using rule 3 (expr -> BOOL .)
+    OR              reduce using rule 3 (expr -> BOOL .)
+    AND             reduce using rule 3 (expr -> BOOL .)
+    MOD             reduce using rule 3 (expr -> BOOL .)
+    DIV             reduce using rule 3 (expr -> BOOL .)
+    MUL             reduce using rule 3 (expr -> BOOL .)
+    SUB             reduce using rule 3 (expr -> BOOL .)
+    DECR            reduce using rule 3 (expr -> BOOL .)
+    INCR            reduce using rule 3 (expr -> BOOL .)
+    ADD             reduce using rule 3 (expr -> BOOL .)
+    INFEQL          reduce using rule 3 (expr -> BOOL .)
+    INF             reduce using rule 3 (expr -> BOOL .)
+    LSHIFT          reduce using rule 3 (expr -> BOOL .)
+    RSHIFT          reduce using rule 3 (expr -> BOOL .)
+    SUP             reduce using rule 3 (expr -> BOOL .)
+    SUPEQL          reduce using rule 3 (expr -> BOOL .)
+    PTRACCSS        reduce using rule 3 (expr -> BOOL .)
+    MEMBACCSS       reduce using rule 3 (expr -> BOOL .)
+    $end            reduce using rule 3 (expr -> BOOL .)
+    )               reduce using rule 3 (expr -> BOOL .)
+
+
+state 4
+
+    (4) expr -> INTERGER .
+    EQL             reduce using rule 4 (expr -> INTERGER .)
+    BOR             reduce using rule 4 (expr -> INTERGER .)
+    BAND            reduce using rule 4 (expr -> INTERGER .)
+    XOR             reduce using rule 4 (expr -> INTERGER .)
+    OR              reduce using rule 4 (expr -> INTERGER .)
+    AND             reduce using rule 4 (expr -> INTERGER .)
+    MOD             reduce using rule 4 (expr -> INTERGER .)
+    DIV             reduce using rule 4 (expr -> INTERGER .)
+    MUL             reduce using rule 4 (expr -> INTERGER .)
+    SUB             reduce using rule 4 (expr -> INTERGER .)
+    DECR            reduce using rule 4 (expr -> INTERGER .)
+    INCR            reduce using rule 4 (expr -> INTERGER .)
+    ADD             reduce using rule 4 (expr -> INTERGER .)
+    INFEQL          reduce using rule 4 (expr -> INTERGER .)
+    INF             reduce using rule 4 (expr -> INTERGER .)
+    LSHIFT          reduce using rule 4 (expr -> INTERGER .)
+    RSHIFT          reduce using rule 4 (expr -> INTERGER .)
+    SUP             reduce using rule 4 (expr -> INTERGER .)
+    SUPEQL          reduce using rule 4 (expr -> INTERGER .)
+    PTRACCSS        reduce using rule 4 (expr -> INTERGER .)
+    MEMBACCSS       reduce using rule 4 (expr -> INTERGER .)
+    $end            reduce using rule 4 (expr -> INTERGER .)
+    )               reduce using rule 4 (expr -> INTERGER .)
+
+
+state 5
+
+    (5) expr -> FLOAT .
+    EQL             reduce using rule 5 (expr -> FLOAT .)
+    BOR             reduce using rule 5 (expr -> FLOAT .)
+    BAND            reduce using rule 5 (expr -> FLOAT .)
+    XOR             reduce using rule 5 (expr -> FLOAT .)
+    OR              reduce using rule 5 (expr -> FLOAT .)
+    AND             reduce using rule 5 (expr -> FLOAT .)
+    MOD             reduce using rule 5 (expr -> FLOAT .)
+    DIV             reduce using rule 5 (expr -> FLOAT .)
+    MUL             reduce using rule 5 (expr -> FLOAT .)
+    SUB             reduce using rule 5 (expr -> FLOAT .)
+    DECR            reduce using rule 5 (expr -> FLOAT .)
+    INCR            reduce using rule 5 (expr -> FLOAT .)
+    ADD             reduce using rule 5 (expr -> FLOAT .)
+    INFEQL          reduce using rule 5 (expr -> FLOAT .)
+    INF             reduce using rule 5 (expr -> FLOAT .)
+    LSHIFT          reduce using rule 5 (expr -> FLOAT .)
+    RSHIFT          reduce using rule 5 (expr -> FLOAT .)
+    SUP             reduce using rule 5 (expr -> FLOAT .)
+    SUPEQL          reduce using rule 5 (expr -> FLOAT .)
+    PTRACCSS        reduce using rule 5 (expr -> FLOAT .)
+    MEMBACCSS       reduce using rule 5 (expr -> FLOAT .)
+    $end            reduce using rule 5 (expr -> FLOAT .)
+    )               reduce using rule 5 (expr -> FLOAT .)
+
+
+state 6
+
+    (6) expr -> CHAR .
+    EQL             reduce using rule 6 (expr -> CHAR .)
+    BOR             reduce using rule 6 (expr -> CHAR .)
+    BAND            reduce using rule 6 (expr -> CHAR .)
+    XOR             reduce using rule 6 (expr -> CHAR .)
+    OR              reduce using rule 6 (expr -> CHAR .)
+    AND             reduce using rule 6 (expr -> CHAR .)
+    MOD             reduce using rule 6 (expr -> CHAR .)
+    DIV             reduce using rule 6 (expr -> CHAR .)
+    MUL             reduce using rule 6 (expr -> CHAR .)
+    SUB             reduce using rule 6 (expr -> CHAR .)
+    DECR            reduce using rule 6 (expr -> CHAR .)
+    INCR            reduce using rule 6 (expr -> CHAR .)
+    ADD             reduce using rule 6 (expr -> CHAR .)
+    INFEQL          reduce using rule 6 (expr -> CHAR .)
+    INF             reduce using rule 6 (expr -> CHAR .)
+    LSHIFT          reduce using rule 6 (expr -> CHAR .)
+    RSHIFT          reduce using rule 6 (expr -> CHAR .)
+    SUP             reduce using rule 6 (expr -> CHAR .)
+    SUPEQL          reduce using rule 6 (expr -> CHAR .)
+    PTRACCSS        reduce using rule 6 (expr -> CHAR .)
+    MEMBACCSS       reduce using rule 6 (expr -> CHAR .)
+    $end            reduce using rule 6 (expr -> CHAR .)
+    )               reduce using rule 6 (expr -> CHAR .)
+
+
+state 7
+
+    (7) expr -> STRING .
+    EQL             reduce using rule 7 (expr -> STRING .)
+    BOR             reduce using rule 7 (expr -> STRING .)
+    BAND            reduce using rule 7 (expr -> STRING .)
+    XOR             reduce using rule 7 (expr -> STRING .)
+    OR              reduce using rule 7 (expr -> STRING .)
+    AND             reduce using rule 7 (expr -> STRING .)
+    MOD             reduce using rule 7 (expr -> STRING .)
+    DIV             reduce using rule 7 (expr -> STRING .)
+    MUL             reduce using rule 7 (expr -> STRING .)
+    SUB             reduce using rule 7 (expr -> STRING .)
+    DECR            reduce using rule 7 (expr -> STRING .)
+    INCR            reduce using rule 7 (expr -> STRING .)
+    ADD             reduce using rule 7 (expr -> STRING .)
+    INFEQL          reduce using rule 7 (expr -> STRING .)
+    INF             reduce using rule 7 (expr -> STRING .)
+    LSHIFT          reduce using rule 7 (expr -> STRING .)
+    RSHIFT          reduce using rule 7 (expr -> STRING .)
+    SUP             reduce using rule 7 (expr -> STRING .)
+    SUPEQL          reduce using rule 7 (expr -> STRING .)
+    PTRACCSS        reduce using rule 7 (expr -> STRING .)
+    MEMBACCSS       reduce using rule 7 (expr -> STRING .)
+    $end            reduce using rule 7 (expr -> STRING .)
+    )               reduce using rule 7 (expr -> STRING .)
+
+
+state 8
+
+    (9) expr -> NAME .
+    EQL             reduce using rule 9 (expr -> NAME .)
+    BOR             reduce using rule 9 (expr -> NAME .)
+    BAND            reduce using rule 9 (expr -> NAME .)
+    XOR             reduce using rule 9 (expr -> NAME .)
+    OR              reduce using rule 9 (expr -> NAME .)
+    AND             reduce using rule 9 (expr -> NAME .)
+    MOD             reduce using rule 9 (expr -> NAME .)
+    DIV             reduce using rule 9 (expr -> NAME .)
+    MUL             reduce using rule 9 (expr -> NAME .)
+    SUB             reduce using rule 9 (expr -> NAME .)
+    DECR            reduce using rule 9 (expr -> NAME .)
+    INCR            reduce using rule 9 (expr -> NAME .)
+    ADD             reduce using rule 9 (expr -> NAME .)
+    INFEQL          reduce using rule 9 (expr -> NAME .)
+    INF             reduce using rule 9 (expr -> NAME .)
+    LSHIFT          reduce using rule 9 (expr -> NAME .)
+    RSHIFT          reduce using rule 9 (expr -> NAME .)
+    SUP             reduce using rule 9 (expr -> NAME .)
+    SUPEQL          reduce using rule 9 (expr -> NAME .)
+    PTRACCSS        reduce using rule 9 (expr -> NAME .)
+    MEMBACCSS       reduce using rule 9 (expr -> NAME .)
+    $end            reduce using rule 9 (expr -> NAME .)
+    )               reduce using rule 9 (expr -> NAME .)
+
+
+state 9
+
+    (11) expr -> BNOT . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 34
+
+state 10
+
+    (15) expr -> NEW . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 35
+
+state 11
+
+    (16) expr -> NOT . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 36
+
+state 12
+
+    (17) expr -> ( . expr )
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 37
+
+state 13
+
+    (10) expr -> expr EQL . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 38
+
+state 14
+
+    (12) expr -> expr BOR . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 39
+
+state 15
+
+    (13) expr -> expr BAND . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 40
+
+state 16
+
+    (14) expr -> expr XOR . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 41
+
+state 17
+
+    (18) expr -> expr OR . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 42
+
+state 18
+
+    (19) expr -> expr AND . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 43
+
+state 19
+
+    (20) expr -> expr MOD . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 44
+
+state 20
+
+    (21) expr -> expr DIV . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 45
+
+state 21
+
+    (22) expr -> expr MUL . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 46
+
+state 22
+
+    (23) expr -> expr SUB . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 47
+
+state 23
+
+    (24) expr -> expr DECR .
+    EQL             reduce using rule 24 (expr -> expr DECR .)
+    BOR             reduce using rule 24 (expr -> expr DECR .)
+    BAND            reduce using rule 24 (expr -> expr DECR .)
+    XOR             reduce using rule 24 (expr -> expr DECR .)
+    OR              reduce using rule 24 (expr -> expr DECR .)
+    AND             reduce using rule 24 (expr -> expr DECR .)
+    MOD             reduce using rule 24 (expr -> expr DECR .)
+    DIV             reduce using rule 24 (expr -> expr DECR .)
+    MUL             reduce using rule 24 (expr -> expr DECR .)
+    SUB             reduce using rule 24 (expr -> expr DECR .)
+    DECR            reduce using rule 24 (expr -> expr DECR .)
+    INCR            reduce using rule 24 (expr -> expr DECR .)
+    ADD             reduce using rule 24 (expr -> expr DECR .)
+    INFEQL          reduce using rule 24 (expr -> expr DECR .)
+    INF             reduce using rule 24 (expr -> expr DECR .)
+    LSHIFT          reduce using rule 24 (expr -> expr DECR .)
+    RSHIFT          reduce using rule 24 (expr -> expr DECR .)
+    SUP             reduce using rule 24 (expr -> expr DECR .)
+    SUPEQL          reduce using rule 24 (expr -> expr DECR .)
+    PTRACCSS        reduce using rule 24 (expr -> expr DECR .)
+    MEMBACCSS       reduce using rule 24 (expr -> expr DECR .)
+    $end            reduce using rule 24 (expr -> expr DECR .)
+    )               reduce using rule 24 (expr -> expr DECR .)
+
+
+state 24
+
+    (25) expr -> expr INCR .
+    EQL             reduce using rule 25 (expr -> expr INCR .)
+    BOR             reduce using rule 25 (expr -> expr INCR .)
+    BAND            reduce using rule 25 (expr -> expr INCR .)
+    XOR             reduce using rule 25 (expr -> expr INCR .)
+    OR              reduce using rule 25 (expr -> expr INCR .)
+    AND             reduce using rule 25 (expr -> expr INCR .)
+    MOD             reduce using rule 25 (expr -> expr INCR .)
+    DIV             reduce using rule 25 (expr -> expr INCR .)
+    MUL             reduce using rule 25 (expr -> expr INCR .)
+    SUB             reduce using rule 25 (expr -> expr INCR .)
+    DECR            reduce using rule 25 (expr -> expr INCR .)
+    INCR            reduce using rule 25 (expr -> expr INCR .)
+    ADD             reduce using rule 25 (expr -> expr INCR .)
+    INFEQL          reduce using rule 25 (expr -> expr INCR .)
+    INF             reduce using rule 25 (expr -> expr INCR .)
+    LSHIFT          reduce using rule 25 (expr -> expr INCR .)
+    RSHIFT          reduce using rule 25 (expr -> expr INCR .)
+    SUP             reduce using rule 25 (expr -> expr INCR .)
+    SUPEQL          reduce using rule 25 (expr -> expr INCR .)
+    PTRACCSS        reduce using rule 25 (expr -> expr INCR .)
+    MEMBACCSS       reduce using rule 25 (expr -> expr INCR .)
+    $end            reduce using rule 25 (expr -> expr INCR .)
+    )               reduce using rule 25 (expr -> expr INCR .)
+
+
+state 25
+
+    (26) expr -> expr ADD . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 48
+
+state 26
+
+    (27) expr -> expr INFEQL . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 49
+
+state 27
+
+    (28) expr -> expr INF . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 50
+
+state 28
+
+    (29) expr -> expr LSHIFT . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 51
+
+state 29
+
+    (30) expr -> expr RSHIFT . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 52
+
+state 30
+
+    (31) expr -> expr SUP . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 53
+
+state 31
+
+    (32) expr -> expr SUPEQL . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 54
+
+state 32
+
+    (33) expr -> expr PTRACCSS . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 55
+
+state 33
+
+    (34) expr -> expr MEMBACCSS . expr
+    (3) expr -> . BOOL
+    (4) expr -> . INTERGER
+    (5) expr -> . FLOAT
+    (6) expr -> . CHAR
+    (7) expr -> . STRING
+    (8) expr -> . expr
+    (9) expr -> . NAME
+    (10) expr -> . expr EQL expr
+    (11) expr -> . BNOT expr
+    (12) expr -> . expr BOR expr
+    (13) expr -> . expr BAND expr
+    (14) expr -> . expr XOR expr
+    (15) expr -> . NEW expr
+    (16) expr -> . NOT expr
+    (17) expr -> . ( expr )
+    (18) expr -> . expr OR expr
+    (19) expr -> . expr AND expr
+    (20) expr -> . expr MOD expr
+    (21) expr -> . expr DIV expr
+    (22) expr -> . expr MUL expr
+    (23) expr -> . expr SUB expr
+    (24) expr -> . expr DECR
+    (25) expr -> . expr INCR
+    (26) expr -> . expr ADD expr
+    (27) expr -> . expr INFEQL expr
+    (28) expr -> . expr INF expr
+    (29) expr -> . expr LSHIFT expr
+    (30) expr -> . expr RSHIFT expr
+    (31) expr -> . expr SUP expr
+    (32) expr -> . expr SUPEQL expr
+    (33) expr -> . expr PTRACCSS expr
+    (34) expr -> . expr MEMBACCSS expr
+    BOOL            shift and go to state 3
+    INTERGER        shift and go to state 4
+    FLOAT           shift and go to state 5
+    CHAR            shift and go to state 6
+    STRING          shift and go to state 7
+    NAME            shift and go to state 8
+    BNOT            shift and go to state 9
+    NEW             shift and go to state 10
+    NOT             shift and go to state 11
+    (               shift and go to state 12
+
+    expr                           shift and go to state 56
+
+state 34
+
+    (11) expr -> BNOT expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for OR resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for AND resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for INF resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for $end resolved using rule 11 (expr -> BNOT expr .)
+  ! reduce/reduce conflict for ) resolved using rule 11 (expr -> BNOT expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 11 (expr -> BNOT expr .)
+    )               reduce using rule 11 (expr -> BNOT expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 35
+
+    (15) expr -> NEW expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for OR resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for AND resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for INF resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for $end resolved using rule 15 (expr -> NEW expr .)
+  ! reduce/reduce conflict for ) resolved using rule 15 (expr -> NEW expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 15 (expr -> NEW expr .)
+    )               reduce using rule 15 (expr -> NEW expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 36
+
+    (16) expr -> NOT expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for OR resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for AND resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for INF resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for $end resolved using rule 16 (expr -> NOT expr .)
+  ! reduce/reduce conflict for ) resolved using rule 16 (expr -> NOT expr .)
+    EQL             reduce using rule 16 (expr -> NOT expr .)
+    BOR             reduce using rule 16 (expr -> NOT expr .)
+    BAND            reduce using rule 16 (expr -> NOT expr .)
+    XOR             reduce using rule 16 (expr -> NOT expr .)
+    OR              reduce using rule 16 (expr -> NOT expr .)
+    AND             reduce using rule 16 (expr -> NOT expr .)
+    MOD             reduce using rule 16 (expr -> NOT expr .)
+    DIV             reduce using rule 16 (expr -> NOT expr .)
+    MUL             reduce using rule 16 (expr -> NOT expr .)
+    SUB             reduce using rule 16 (expr -> NOT expr .)
+    ADD             reduce using rule 16 (expr -> NOT expr .)
+    INFEQL          reduce using rule 16 (expr -> NOT expr .)
+    INF             reduce using rule 16 (expr -> NOT expr .)
+    LSHIFT          reduce using rule 16 (expr -> NOT expr .)
+    RSHIFT          reduce using rule 16 (expr -> NOT expr .)
+    SUP             reduce using rule 16 (expr -> NOT expr .)
+    SUPEQL          reduce using rule 16 (expr -> NOT expr .)
+    $end            reduce using rule 16 (expr -> NOT expr .)
+    )               reduce using rule 16 (expr -> NOT expr .)
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 37
+
+    (17) expr -> ( expr . )
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! shift/reduce conflict for ) resolved as shift
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    )               shift and go to state 57
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 38
+
+    (10) expr -> expr EQL expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for OR resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for AND resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for INF resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for $end resolved using rule 10 (expr -> expr EQL expr .)
+  ! reduce/reduce conflict for ) resolved using rule 10 (expr -> expr EQL expr .)
+    EQL             reduce using rule 10 (expr -> expr EQL expr .)
+    BOR             reduce using rule 10 (expr -> expr EQL expr .)
+    BAND            reduce using rule 10 (expr -> expr EQL expr .)
+    XOR             reduce using rule 10 (expr -> expr EQL expr .)
+    OR              reduce using rule 10 (expr -> expr EQL expr .)
+    AND             reduce using rule 10 (expr -> expr EQL expr .)
+    MOD             reduce using rule 10 (expr -> expr EQL expr .)
+    INFEQL          reduce using rule 10 (expr -> expr EQL expr .)
+    INF             reduce using rule 10 (expr -> expr EQL expr .)
+    LSHIFT          reduce using rule 10 (expr -> expr EQL expr .)
+    RSHIFT          reduce using rule 10 (expr -> expr EQL expr .)
+    SUP             reduce using rule 10 (expr -> expr EQL expr .)
+    SUPEQL          reduce using rule 10 (expr -> expr EQL expr .)
+    $end            reduce using rule 10 (expr -> expr EQL expr .)
+    )               reduce using rule 10 (expr -> expr EQL expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 39
+
+    (12) expr -> expr BOR expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for OR resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for AND resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for INF resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for $end resolved using rule 12 (expr -> expr BOR expr .)
+  ! reduce/reduce conflict for ) resolved using rule 12 (expr -> expr BOR expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 12 (expr -> expr BOR expr .)
+    )               reduce using rule 12 (expr -> expr BOR expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 40
+
+    (13) expr -> expr BAND expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for OR resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for AND resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for INF resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for $end resolved using rule 13 (expr -> expr BAND expr .)
+  ! reduce/reduce conflict for ) resolved using rule 13 (expr -> expr BAND expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 13 (expr -> expr BAND expr .)
+    )               reduce using rule 13 (expr -> expr BAND expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 41
+
+    (14) expr -> expr XOR expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for OR resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for AND resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for INF resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for $end resolved using rule 14 (expr -> expr XOR expr .)
+  ! reduce/reduce conflict for ) resolved using rule 14 (expr -> expr XOR expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 14 (expr -> expr XOR expr .)
+    )               reduce using rule 14 (expr -> expr XOR expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 42
+
+    (18) expr -> expr OR expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for OR resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for AND resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for INF resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for $end resolved using rule 18 (expr -> expr OR expr .)
+  ! reduce/reduce conflict for ) resolved using rule 18 (expr -> expr OR expr .)
+    BOR             reduce using rule 18 (expr -> expr OR expr .)
+    BAND            reduce using rule 18 (expr -> expr OR expr .)
+    XOR             reduce using rule 18 (expr -> expr OR expr .)
+    OR              reduce using rule 18 (expr -> expr OR expr .)
+    AND             reduce using rule 18 (expr -> expr OR expr .)
+    MOD             reduce using rule 18 (expr -> expr OR expr .)
+    LSHIFT          reduce using rule 18 (expr -> expr OR expr .)
+    RSHIFT          reduce using rule 18 (expr -> expr OR expr .)
+    $end            reduce using rule 18 (expr -> expr OR expr .)
+    )               reduce using rule 18 (expr -> expr OR expr .)
+    EQL             shift and go to state 13
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 43
+
+    (19) expr -> expr AND expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for OR resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for AND resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for INF resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for $end resolved using rule 19 (expr -> expr AND expr .)
+  ! reduce/reduce conflict for ) resolved using rule 19 (expr -> expr AND expr .)
+    BOR             reduce using rule 19 (expr -> expr AND expr .)
+    BAND            reduce using rule 19 (expr -> expr AND expr .)
+    XOR             reduce using rule 19 (expr -> expr AND expr .)
+    OR              reduce using rule 19 (expr -> expr AND expr .)
+    AND             reduce using rule 19 (expr -> expr AND expr .)
+    MOD             reduce using rule 19 (expr -> expr AND expr .)
+    LSHIFT          reduce using rule 19 (expr -> expr AND expr .)
+    RSHIFT          reduce using rule 19 (expr -> expr AND expr .)
+    $end            reduce using rule 19 (expr -> expr AND expr .)
+    )               reduce using rule 19 (expr -> expr AND expr .)
+    EQL             shift and go to state 13
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 44
+
+    (20) expr -> expr MOD expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for OR resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for AND resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for INF resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for $end resolved using rule 20 (expr -> expr MOD expr .)
+  ! reduce/reduce conflict for ) resolved using rule 20 (expr -> expr MOD expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 20 (expr -> expr MOD expr .)
+    )               reduce using rule 20 (expr -> expr MOD expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 45
+
+    (21) expr -> expr DIV expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for OR resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for AND resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for INF resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for $end resolved using rule 21 (expr -> expr DIV expr .)
+  ! reduce/reduce conflict for ) resolved using rule 21 (expr -> expr DIV expr .)
+    EQL             reduce using rule 21 (expr -> expr DIV expr .)
+    BOR             reduce using rule 21 (expr -> expr DIV expr .)
+    BAND            reduce using rule 21 (expr -> expr DIV expr .)
+    XOR             reduce using rule 21 (expr -> expr DIV expr .)
+    OR              reduce using rule 21 (expr -> expr DIV expr .)
+    AND             reduce using rule 21 (expr -> expr DIV expr .)
+    MOD             reduce using rule 21 (expr -> expr DIV expr .)
+    DIV             reduce using rule 21 (expr -> expr DIV expr .)
+    MUL             reduce using rule 21 (expr -> expr DIV expr .)
+    SUB             reduce using rule 21 (expr -> expr DIV expr .)
+    ADD             reduce using rule 21 (expr -> expr DIV expr .)
+    INFEQL          reduce using rule 21 (expr -> expr DIV expr .)
+    INF             reduce using rule 21 (expr -> expr DIV expr .)
+    LSHIFT          reduce using rule 21 (expr -> expr DIV expr .)
+    RSHIFT          reduce using rule 21 (expr -> expr DIV expr .)
+    SUP             reduce using rule 21 (expr -> expr DIV expr .)
+    SUPEQL          reduce using rule 21 (expr -> expr DIV expr .)
+    $end            reduce using rule 21 (expr -> expr DIV expr .)
+    )               reduce using rule 21 (expr -> expr DIV expr .)
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 46
+
+    (22) expr -> expr MUL expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for OR resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for AND resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for INF resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for $end resolved using rule 22 (expr -> expr MUL expr .)
+  ! reduce/reduce conflict for ) resolved using rule 22 (expr -> expr MUL expr .)
+    EQL             reduce using rule 22 (expr -> expr MUL expr .)
+    BOR             reduce using rule 22 (expr -> expr MUL expr .)
+    BAND            reduce using rule 22 (expr -> expr MUL expr .)
+    XOR             reduce using rule 22 (expr -> expr MUL expr .)
+    OR              reduce using rule 22 (expr -> expr MUL expr .)
+    AND             reduce using rule 22 (expr -> expr MUL expr .)
+    MOD             reduce using rule 22 (expr -> expr MUL expr .)
+    DIV             reduce using rule 22 (expr -> expr MUL expr .)
+    MUL             reduce using rule 22 (expr -> expr MUL expr .)
+    SUB             reduce using rule 22 (expr -> expr MUL expr .)
+    ADD             reduce using rule 22 (expr -> expr MUL expr .)
+    INFEQL          reduce using rule 22 (expr -> expr MUL expr .)
+    INF             reduce using rule 22 (expr -> expr MUL expr .)
+    LSHIFT          reduce using rule 22 (expr -> expr MUL expr .)
+    RSHIFT          reduce using rule 22 (expr -> expr MUL expr .)
+    SUP             reduce using rule 22 (expr -> expr MUL expr .)
+    SUPEQL          reduce using rule 22 (expr -> expr MUL expr .)
+    $end            reduce using rule 22 (expr -> expr MUL expr .)
+    )               reduce using rule 22 (expr -> expr MUL expr .)
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 47
+
+    (23) expr -> expr SUB expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for OR resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for AND resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for INF resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for $end resolved using rule 23 (expr -> expr SUB expr .)
+  ! reduce/reduce conflict for ) resolved using rule 23 (expr -> expr SUB expr .)
+    EQL             reduce using rule 23 (expr -> expr SUB expr .)
+    BOR             reduce using rule 23 (expr -> expr SUB expr .)
+    BAND            reduce using rule 23 (expr -> expr SUB expr .)
+    XOR             reduce using rule 23 (expr -> expr SUB expr .)
+    OR              reduce using rule 23 (expr -> expr SUB expr .)
+    AND             reduce using rule 23 (expr -> expr SUB expr .)
+    MOD             reduce using rule 23 (expr -> expr SUB expr .)
+    SUB             reduce using rule 23 (expr -> expr SUB expr .)
+    ADD             reduce using rule 23 (expr -> expr SUB expr .)
+    INFEQL          reduce using rule 23 (expr -> expr SUB expr .)
+    INF             reduce using rule 23 (expr -> expr SUB expr .)
+    LSHIFT          reduce using rule 23 (expr -> expr SUB expr .)
+    RSHIFT          reduce using rule 23 (expr -> expr SUB expr .)
+    SUP             reduce using rule 23 (expr -> expr SUB expr .)
+    SUPEQL          reduce using rule 23 (expr -> expr SUB expr .)
+    $end            reduce using rule 23 (expr -> expr SUB expr .)
+    )               reduce using rule 23 (expr -> expr SUB expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 48
+
+    (26) expr -> expr ADD expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for OR resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for AND resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for INF resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for $end resolved using rule 26 (expr -> expr ADD expr .)
+  ! reduce/reduce conflict for ) resolved using rule 26 (expr -> expr ADD expr .)
+    EQL             reduce using rule 26 (expr -> expr ADD expr .)
+    BOR             reduce using rule 26 (expr -> expr ADD expr .)
+    BAND            reduce using rule 26 (expr -> expr ADD expr .)
+    XOR             reduce using rule 26 (expr -> expr ADD expr .)
+    OR              reduce using rule 26 (expr -> expr ADD expr .)
+    AND             reduce using rule 26 (expr -> expr ADD expr .)
+    MOD             reduce using rule 26 (expr -> expr ADD expr .)
+    SUB             reduce using rule 26 (expr -> expr ADD expr .)
+    ADD             reduce using rule 26 (expr -> expr ADD expr .)
+    INFEQL          reduce using rule 26 (expr -> expr ADD expr .)
+    INF             reduce using rule 26 (expr -> expr ADD expr .)
+    LSHIFT          reduce using rule 26 (expr -> expr ADD expr .)
+    RSHIFT          reduce using rule 26 (expr -> expr ADD expr .)
+    SUP             reduce using rule 26 (expr -> expr ADD expr .)
+    SUPEQL          reduce using rule 26 (expr -> expr ADD expr .)
+    $end            reduce using rule 26 (expr -> expr ADD expr .)
+    )               reduce using rule 26 (expr -> expr ADD expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 49
+
+    (27) expr -> expr INFEQL expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for OR resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for AND resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for INF resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for $end resolved using rule 27 (expr -> expr INFEQL expr .)
+  ! reduce/reduce conflict for ) resolved using rule 27 (expr -> expr INFEQL expr .)
+    EQL             reduce using rule 27 (expr -> expr INFEQL expr .)
+    BOR             reduce using rule 27 (expr -> expr INFEQL expr .)
+    BAND            reduce using rule 27 (expr -> expr INFEQL expr .)
+    XOR             reduce using rule 27 (expr -> expr INFEQL expr .)
+    OR              reduce using rule 27 (expr -> expr INFEQL expr .)
+    AND             reduce using rule 27 (expr -> expr INFEQL expr .)
+    MOD             reduce using rule 27 (expr -> expr INFEQL expr .)
+    INFEQL          reduce using rule 27 (expr -> expr INFEQL expr .)
+    INF             reduce using rule 27 (expr -> expr INFEQL expr .)
+    LSHIFT          reduce using rule 27 (expr -> expr INFEQL expr .)
+    RSHIFT          reduce using rule 27 (expr -> expr INFEQL expr .)
+    SUP             reduce using rule 27 (expr -> expr INFEQL expr .)
+    SUPEQL          reduce using rule 27 (expr -> expr INFEQL expr .)
+    $end            reduce using rule 27 (expr -> expr INFEQL expr .)
+    )               reduce using rule 27 (expr -> expr INFEQL expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 50
+
+    (28) expr -> expr INF expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for OR resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for AND resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for INF resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for $end resolved using rule 28 (expr -> expr INF expr .)
+  ! reduce/reduce conflict for ) resolved using rule 28 (expr -> expr INF expr .)
+    EQL             reduce using rule 28 (expr -> expr INF expr .)
+    BOR             reduce using rule 28 (expr -> expr INF expr .)
+    BAND            reduce using rule 28 (expr -> expr INF expr .)
+    XOR             reduce using rule 28 (expr -> expr INF expr .)
+    OR              reduce using rule 28 (expr -> expr INF expr .)
+    AND             reduce using rule 28 (expr -> expr INF expr .)
+    MOD             reduce using rule 28 (expr -> expr INF expr .)
+    INFEQL          reduce using rule 28 (expr -> expr INF expr .)
+    INF             reduce using rule 28 (expr -> expr INF expr .)
+    LSHIFT          reduce using rule 28 (expr -> expr INF expr .)
+    RSHIFT          reduce using rule 28 (expr -> expr INF expr .)
+    SUP             reduce using rule 28 (expr -> expr INF expr .)
+    SUPEQL          reduce using rule 28 (expr -> expr INF expr .)
+    $end            reduce using rule 28 (expr -> expr INF expr .)
+    )               reduce using rule 28 (expr -> expr INF expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 51
+
+    (29) expr -> expr LSHIFT expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for OR resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for AND resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for INF resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for $end resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! reduce/reduce conflict for ) resolved using rule 29 (expr -> expr LSHIFT expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 29 (expr -> expr LSHIFT expr .)
+    )               reduce using rule 29 (expr -> expr LSHIFT expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 52
+
+    (30) expr -> expr RSHIFT expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for OR resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for AND resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for INF resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for $end resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! reduce/reduce conflict for ) resolved using rule 30 (expr -> expr RSHIFT expr .)
+  ! shift/reduce conflict for EQL resolved as shift
+  ! shift/reduce conflict for BOR resolved as shift
+  ! shift/reduce conflict for BAND resolved as shift
+  ! shift/reduce conflict for XOR resolved as shift
+  ! shift/reduce conflict for OR resolved as shift
+  ! shift/reduce conflict for AND resolved as shift
+  ! shift/reduce conflict for MOD resolved as shift
+  ! shift/reduce conflict for DIV resolved as shift
+  ! shift/reduce conflict for MUL resolved as shift
+  ! shift/reduce conflict for SUB resolved as shift
+  ! shift/reduce conflict for DECR resolved as shift
+  ! shift/reduce conflict for INCR resolved as shift
+  ! shift/reduce conflict for ADD resolved as shift
+  ! shift/reduce conflict for INFEQL resolved as shift
+  ! shift/reduce conflict for INF resolved as shift
+  ! shift/reduce conflict for LSHIFT resolved as shift
+  ! shift/reduce conflict for RSHIFT resolved as shift
+  ! shift/reduce conflict for SUP resolved as shift
+  ! shift/reduce conflict for SUPEQL resolved as shift
+  ! shift/reduce conflict for PTRACCSS resolved as shift
+  ! shift/reduce conflict for MEMBACCSS resolved as shift
+    $end            reduce using rule 30 (expr -> expr RSHIFT expr .)
+    )               reduce using rule 30 (expr -> expr RSHIFT expr .)
+    EQL             shift and go to state 13
+    BOR             shift and go to state 14
+    BAND            shift and go to state 15
+    XOR             shift and go to state 16
+    OR              shift and go to state 17
+    AND             shift and go to state 18
+    MOD             shift and go to state 19
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    INFEQL          shift and go to state 26
+    INF             shift and go to state 27
+    LSHIFT          shift and go to state 28
+    RSHIFT          shift and go to state 29
+    SUP             shift and go to state 30
+    SUPEQL          shift and go to state 31
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 53
+
+    (31) expr -> expr SUP expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for OR resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for AND resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for INF resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for $end resolved using rule 31 (expr -> expr SUP expr .)
+  ! reduce/reduce conflict for ) resolved using rule 31 (expr -> expr SUP expr .)
+    EQL             reduce using rule 31 (expr -> expr SUP expr .)
+    BOR             reduce using rule 31 (expr -> expr SUP expr .)
+    BAND            reduce using rule 31 (expr -> expr SUP expr .)
+    XOR             reduce using rule 31 (expr -> expr SUP expr .)
+    OR              reduce using rule 31 (expr -> expr SUP expr .)
+    AND             reduce using rule 31 (expr -> expr SUP expr .)
+    MOD             reduce using rule 31 (expr -> expr SUP expr .)
+    INFEQL          reduce using rule 31 (expr -> expr SUP expr .)
+    INF             reduce using rule 31 (expr -> expr SUP expr .)
+    LSHIFT          reduce using rule 31 (expr -> expr SUP expr .)
+    RSHIFT          reduce using rule 31 (expr -> expr SUP expr .)
+    SUP             reduce using rule 31 (expr -> expr SUP expr .)
+    SUPEQL          reduce using rule 31 (expr -> expr SUP expr .)
+    $end            reduce using rule 31 (expr -> expr SUP expr .)
+    )               reduce using rule 31 (expr -> expr SUP expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 54
+
+    (32) expr -> expr SUPEQL expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for OR resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for AND resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for INF resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for $end resolved using rule 32 (expr -> expr SUPEQL expr .)
+  ! reduce/reduce conflict for ) resolved using rule 32 (expr -> expr SUPEQL expr .)
+    EQL             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    BOR             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    BAND            reduce using rule 32 (expr -> expr SUPEQL expr .)
+    XOR             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    OR              reduce using rule 32 (expr -> expr SUPEQL expr .)
+    AND             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    MOD             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    INFEQL          reduce using rule 32 (expr -> expr SUPEQL expr .)
+    INF             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    LSHIFT          reduce using rule 32 (expr -> expr SUPEQL expr .)
+    RSHIFT          reduce using rule 32 (expr -> expr SUPEQL expr .)
+    SUP             reduce using rule 32 (expr -> expr SUPEQL expr .)
+    SUPEQL          reduce using rule 32 (expr -> expr SUPEQL expr .)
+    $end            reduce using rule 32 (expr -> expr SUPEQL expr .)
+    )               reduce using rule 32 (expr -> expr SUPEQL expr .)
+    DIV             shift and go to state 20
+    MUL             shift and go to state 21
+    SUB             shift and go to state 22
+    DECR            shift and go to state 23
+    INCR            shift and go to state 24
+    ADD             shift and go to state 25
+    PTRACCSS        shift and go to state 32
+    MEMBACCSS       shift and go to state 33
+
+
+state 55
+
+    (33) expr -> expr PTRACCSS expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for OR resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for AND resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for INF resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for $end resolved using rule 33 (expr -> expr PTRACCSS expr .)
+  ! reduce/reduce conflict for ) resolved using rule 33 (expr -> expr PTRACCSS expr .)
+    EQL             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    BOR             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    BAND            reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    XOR             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    OR              reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    AND             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    MOD             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    DIV             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    MUL             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    SUB             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    DECR            reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    INCR            reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    ADD             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    INFEQL          reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    INF             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    LSHIFT          reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    RSHIFT          reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    SUP             reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    SUPEQL          reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    PTRACCSS        reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    MEMBACCSS       reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    $end            reduce using rule 33 (expr -> expr PTRACCSS expr .)
+    )               reduce using rule 33 (expr -> expr PTRACCSS expr .)
+
+
+state 56
+
+    (34) expr -> expr MEMBACCSS expr .
+    (8) expr -> expr .
+    (10) expr -> expr . EQL expr
+    (12) expr -> expr . BOR expr
+    (13) expr -> expr . BAND expr
+    (14) expr -> expr . XOR expr
+    (18) expr -> expr . OR expr
+    (19) expr -> expr . AND expr
+    (20) expr -> expr . MOD expr
+    (21) expr -> expr . DIV expr
+    (22) expr -> expr . MUL expr
+    (23) expr -> expr . SUB expr
+    (24) expr -> expr . DECR
+    (25) expr -> expr . INCR
+    (26) expr -> expr . ADD expr
+    (27) expr -> expr . INFEQL expr
+    (28) expr -> expr . INF expr
+    (29) expr -> expr . LSHIFT expr
+    (30) expr -> expr . RSHIFT expr
+    (31) expr -> expr . SUP expr
+    (32) expr -> expr . SUPEQL expr
+    (33) expr -> expr . PTRACCSS expr
+    (34) expr -> expr . MEMBACCSS expr
+  ! reduce/reduce conflict for EQL resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for BOR resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for BAND resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for XOR resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for OR resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for AND resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for MOD resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for DIV resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for MUL resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for SUB resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for DECR resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for INCR resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for ADD resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for INFEQL resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for INF resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for LSHIFT resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for RSHIFT resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for SUP resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for SUPEQL resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for PTRACCSS resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for MEMBACCSS resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for $end resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+  ! reduce/reduce conflict for ) resolved using rule 34 (expr -> expr MEMBACCSS expr .)
+    EQL             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    BOR             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    BAND            reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    XOR             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    OR              reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    AND             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    MOD             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    DIV             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    MUL             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    SUB             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    DECR            reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    INCR            reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    ADD             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    INFEQL          reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    INF             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    LSHIFT          reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    RSHIFT          reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    SUP             reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    SUPEQL          reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    PTRACCSS        reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    MEMBACCSS       reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    $end            reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+    )               reduce using rule 34 (expr -> expr MEMBACCSS expr .)
+
+
+state 57
+
+    (17) expr -> ( expr ) .
+    EQL             reduce using rule 17 (expr -> ( expr ) .)
+    BOR             reduce using rule 17 (expr -> ( expr ) .)
+    BAND            reduce using rule 17 (expr -> ( expr ) .)
+    XOR             reduce using rule 17 (expr -> ( expr ) .)
+    OR              reduce using rule 17 (expr -> ( expr ) .)
+    AND             reduce using rule 17 (expr -> ( expr ) .)
+    MOD             reduce using rule 17 (expr -> ( expr ) .)
+    DIV             reduce using rule 17 (expr -> ( expr ) .)
+    MUL             reduce using rule 17 (expr -> ( expr ) .)
+    SUB             reduce using rule 17 (expr -> ( expr ) .)
+    DECR            reduce using rule 17 (expr -> ( expr ) .)
+    INCR            reduce using rule 17 (expr -> ( expr ) .)
+    ADD             reduce using rule 17 (expr -> ( expr ) .)
+    INFEQL          reduce using rule 17 (expr -> ( expr ) .)
+    INF             reduce using rule 17 (expr -> ( expr ) .)
+    LSHIFT          reduce using rule 17 (expr -> ( expr ) .)
+    RSHIFT          reduce using rule 17 (expr -> ( expr ) .)
+    SUP             reduce using rule 17 (expr -> ( expr ) .)
+    SUPEQL          reduce using rule 17 (expr -> ( expr ) .)
+    PTRACCSS        reduce using rule 17 (expr -> ( expr ) .)
+    MEMBACCSS       reduce using rule 17 (expr -> ( expr ) .)
+    $end            reduce using rule 17 (expr -> ( expr ) .)
+    )               reduce using rule 17 (expr -> ( expr ) .)
+
+
+Conflicts:
+
+shift/reduce conflict for EQL in state 2 resolved as shift
+shift/reduce conflict for BOR in state 2 resolved as shift
+shift/reduce conflict for BAND in state 2 resolved as shift
+shift/reduce conflict for XOR in state 2 resolved as shift
+shift/reduce conflict for OR in state 2 resolved as shift
+shift/reduce conflict for AND in state 2 resolved as shift
+shift/reduce conflict for MOD in state 2 resolved as shift
+shift/reduce conflict for DIV in state 2 resolved as shift
+shift/reduce conflict for MUL in state 2 resolved as shift
+shift/reduce conflict for SUB in state 2 resolved as shift
+shift/reduce conflict for DECR in state 2 resolved as shift
+shift/reduce conflict for INCR in state 2 resolved as shift
+shift/reduce conflict for ADD in state 2 resolved as shift
+shift/reduce conflict for INFEQL in state 2 resolved as shift
+shift/reduce conflict for INF in state 2 resolved as shift
+shift/reduce conflict for LSHIFT in state 2 resolved as shift
+shift/reduce conflict for RSHIFT in state 2 resolved as shift
+shift/reduce conflict for SUP in state 2 resolved as shift
+shift/reduce conflict for SUPEQL in state 2 resolved as shift
+shift/reduce conflict for PTRACCSS in state 2 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 2 resolved as shift
+shift/reduce conflict for EQL in state 34 resolved as shift
+shift/reduce conflict for BOR in state 34 resolved as shift
+shift/reduce conflict for BAND in state 34 resolved as shift
+shift/reduce conflict for XOR in state 34 resolved as shift
+shift/reduce conflict for OR in state 34 resolved as shift
+shift/reduce conflict for AND in state 34 resolved as shift
+shift/reduce conflict for MOD in state 34 resolved as shift
+shift/reduce conflict for DIV in state 34 resolved as shift
+shift/reduce conflict for MUL in state 34 resolved as shift
+shift/reduce conflict for SUB in state 34 resolved as shift
+shift/reduce conflict for DECR in state 34 resolved as shift
+shift/reduce conflict for INCR in state 34 resolved as shift
+shift/reduce conflict for ADD in state 34 resolved as shift
+shift/reduce conflict for INFEQL in state 34 resolved as shift
+shift/reduce conflict for INF in state 34 resolved as shift
+shift/reduce conflict for LSHIFT in state 34 resolved as shift
+shift/reduce conflict for RSHIFT in state 34 resolved as shift
+shift/reduce conflict for SUP in state 34 resolved as shift
+shift/reduce conflict for SUPEQL in state 34 resolved as shift
+shift/reduce conflict for PTRACCSS in state 34 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 34 resolved as shift
+shift/reduce conflict for EQL in state 35 resolved as shift
+shift/reduce conflict for BOR in state 35 resolved as shift
+shift/reduce conflict for BAND in state 35 resolved as shift
+shift/reduce conflict for XOR in state 35 resolved as shift
+shift/reduce conflict for OR in state 35 resolved as shift
+shift/reduce conflict for AND in state 35 resolved as shift
+shift/reduce conflict for MOD in state 35 resolved as shift
+shift/reduce conflict for DIV in state 35 resolved as shift
+shift/reduce conflict for MUL in state 35 resolved as shift
+shift/reduce conflict for SUB in state 35 resolved as shift
+shift/reduce conflict for DECR in state 35 resolved as shift
+shift/reduce conflict for INCR in state 35 resolved as shift
+shift/reduce conflict for ADD in state 35 resolved as shift
+shift/reduce conflict for INFEQL in state 35 resolved as shift
+shift/reduce conflict for INF in state 35 resolved as shift
+shift/reduce conflict for LSHIFT in state 35 resolved as shift
+shift/reduce conflict for RSHIFT in state 35 resolved as shift
+shift/reduce conflict for SUP in state 35 resolved as shift
+shift/reduce conflict for SUPEQL in state 35 resolved as shift
+shift/reduce conflict for PTRACCSS in state 35 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 35 resolved as shift
+shift/reduce conflict for ) in state 37 resolved as shift
+shift/reduce conflict for EQL in state 37 resolved as shift
+shift/reduce conflict for BOR in state 37 resolved as shift
+shift/reduce conflict for BAND in state 37 resolved as shift
+shift/reduce conflict for XOR in state 37 resolved as shift
+shift/reduce conflict for OR in state 37 resolved as shift
+shift/reduce conflict for AND in state 37 resolved as shift
+shift/reduce conflict for MOD in state 37 resolved as shift
+shift/reduce conflict for DIV in state 37 resolved as shift
+shift/reduce conflict for MUL in state 37 resolved as shift
+shift/reduce conflict for SUB in state 37 resolved as shift
+shift/reduce conflict for DECR in state 37 resolved as shift
+shift/reduce conflict for INCR in state 37 resolved as shift
+shift/reduce conflict for ADD in state 37 resolved as shift
+shift/reduce conflict for INFEQL in state 37 resolved as shift
+shift/reduce conflict for INF in state 37 resolved as shift
+shift/reduce conflict for LSHIFT in state 37 resolved as shift
+shift/reduce conflict for RSHIFT in state 37 resolved as shift
+shift/reduce conflict for SUP in state 37 resolved as shift
+shift/reduce conflict for SUPEQL in state 37 resolved as shift
+shift/reduce conflict for PTRACCSS in state 37 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 37 resolved as shift
+shift/reduce conflict for EQL in state 39 resolved as shift
+shift/reduce conflict for BOR in state 39 resolved as shift
+shift/reduce conflict for BAND in state 39 resolved as shift
+shift/reduce conflict for XOR in state 39 resolved as shift
+shift/reduce conflict for OR in state 39 resolved as shift
+shift/reduce conflict for AND in state 39 resolved as shift
+shift/reduce conflict for MOD in state 39 resolved as shift
+shift/reduce conflict for DIV in state 39 resolved as shift
+shift/reduce conflict for MUL in state 39 resolved as shift
+shift/reduce conflict for SUB in state 39 resolved as shift
+shift/reduce conflict for DECR in state 39 resolved as shift
+shift/reduce conflict for INCR in state 39 resolved as shift
+shift/reduce conflict for ADD in state 39 resolved as shift
+shift/reduce conflict for INFEQL in state 39 resolved as shift
+shift/reduce conflict for INF in state 39 resolved as shift
+shift/reduce conflict for LSHIFT in state 39 resolved as shift
+shift/reduce conflict for RSHIFT in state 39 resolved as shift
+shift/reduce conflict for SUP in state 39 resolved as shift
+shift/reduce conflict for SUPEQL in state 39 resolved as shift
+shift/reduce conflict for PTRACCSS in state 39 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 39 resolved as shift
+shift/reduce conflict for EQL in state 40 resolved as shift
+shift/reduce conflict for BOR in state 40 resolved as shift
+shift/reduce conflict for BAND in state 40 resolved as shift
+shift/reduce conflict for XOR in state 40 resolved as shift
+shift/reduce conflict for OR in state 40 resolved as shift
+shift/reduce conflict for AND in state 40 resolved as shift
+shift/reduce conflict for MOD in state 40 resolved as shift
+shift/reduce conflict for DIV in state 40 resolved as shift
+shift/reduce conflict for MUL in state 40 resolved as shift
+shift/reduce conflict for SUB in state 40 resolved as shift
+shift/reduce conflict for DECR in state 40 resolved as shift
+shift/reduce conflict for INCR in state 40 resolved as shift
+shift/reduce conflict for ADD in state 40 resolved as shift
+shift/reduce conflict for INFEQL in state 40 resolved as shift
+shift/reduce conflict for INF in state 40 resolved as shift
+shift/reduce conflict for LSHIFT in state 40 resolved as shift
+shift/reduce conflict for RSHIFT in state 40 resolved as shift
+shift/reduce conflict for SUP in state 40 resolved as shift
+shift/reduce conflict for SUPEQL in state 40 resolved as shift
+shift/reduce conflict for PTRACCSS in state 40 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 40 resolved as shift
+shift/reduce conflict for EQL in state 41 resolved as shift
+shift/reduce conflict for BOR in state 41 resolved as shift
+shift/reduce conflict for BAND in state 41 resolved as shift
+shift/reduce conflict for XOR in state 41 resolved as shift
+shift/reduce conflict for OR in state 41 resolved as shift
+shift/reduce conflict for AND in state 41 resolved as shift
+shift/reduce conflict for MOD in state 41 resolved as shift
+shift/reduce conflict for DIV in state 41 resolved as shift
+shift/reduce conflict for MUL in state 41 resolved as shift
+shift/reduce conflict for SUB in state 41 resolved as shift
+shift/reduce conflict for DECR in state 41 resolved as shift
+shift/reduce conflict for INCR in state 41 resolved as shift
+shift/reduce conflict for ADD in state 41 resolved as shift
+shift/reduce conflict for INFEQL in state 41 resolved as shift
+shift/reduce conflict for INF in state 41 resolved as shift
+shift/reduce conflict for LSHIFT in state 41 resolved as shift
+shift/reduce conflict for RSHIFT in state 41 resolved as shift
+shift/reduce conflict for SUP in state 41 resolved as shift
+shift/reduce conflict for SUPEQL in state 41 resolved as shift
+shift/reduce conflict for PTRACCSS in state 41 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 41 resolved as shift
+shift/reduce conflict for EQL in state 44 resolved as shift
+shift/reduce conflict for BOR in state 44 resolved as shift
+shift/reduce conflict for BAND in state 44 resolved as shift
+shift/reduce conflict for XOR in state 44 resolved as shift
+shift/reduce conflict for OR in state 44 resolved as shift
+shift/reduce conflict for AND in state 44 resolved as shift
+shift/reduce conflict for MOD in state 44 resolved as shift
+shift/reduce conflict for DIV in state 44 resolved as shift
+shift/reduce conflict for MUL in state 44 resolved as shift
+shift/reduce conflict for SUB in state 44 resolved as shift
+shift/reduce conflict for DECR in state 44 resolved as shift
+shift/reduce conflict for INCR in state 44 resolved as shift
+shift/reduce conflict for ADD in state 44 resolved as shift
+shift/reduce conflict for INFEQL in state 44 resolved as shift
+shift/reduce conflict for INF in state 44 resolved as shift
+shift/reduce conflict for LSHIFT in state 44 resolved as shift
+shift/reduce conflict for RSHIFT in state 44 resolved as shift
+shift/reduce conflict for SUP in state 44 resolved as shift
+shift/reduce conflict for SUPEQL in state 44 resolved as shift
+shift/reduce conflict for PTRACCSS in state 44 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 44 resolved as shift
+shift/reduce conflict for EQL in state 51 resolved as shift
+shift/reduce conflict for BOR in state 51 resolved as shift
+shift/reduce conflict for BAND in state 51 resolved as shift
+shift/reduce conflict for XOR in state 51 resolved as shift
+shift/reduce conflict for OR in state 51 resolved as shift
+shift/reduce conflict for AND in state 51 resolved as shift
+shift/reduce conflict for MOD in state 51 resolved as shift
+shift/reduce conflict for DIV in state 51 resolved as shift
+shift/reduce conflict for MUL in state 51 resolved as shift
+shift/reduce conflict for SUB in state 51 resolved as shift
+shift/reduce conflict for DECR in state 51 resolved as shift
+shift/reduce conflict for INCR in state 51 resolved as shift
+shift/reduce conflict for ADD in state 51 resolved as shift
+shift/reduce conflict for INFEQL in state 51 resolved as shift
+shift/reduce conflict for INF in state 51 resolved as shift
+shift/reduce conflict for LSHIFT in state 51 resolved as shift
+shift/reduce conflict for RSHIFT in state 51 resolved as shift
+shift/reduce conflict for SUP in state 51 resolved as shift
+shift/reduce conflict for SUPEQL in state 51 resolved as shift
+shift/reduce conflict for PTRACCSS in state 51 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 51 resolved as shift
+shift/reduce conflict for EQL in state 52 resolved as shift
+shift/reduce conflict for BOR in state 52 resolved as shift
+shift/reduce conflict for BAND in state 52 resolved as shift
+shift/reduce conflict for XOR in state 52 resolved as shift
+shift/reduce conflict for OR in state 52 resolved as shift
+shift/reduce conflict for AND in state 52 resolved as shift
+shift/reduce conflict for MOD in state 52 resolved as shift
+shift/reduce conflict for DIV in state 52 resolved as shift
+shift/reduce conflict for MUL in state 52 resolved as shift
+shift/reduce conflict for SUB in state 52 resolved as shift
+shift/reduce conflict for DECR in state 52 resolved as shift
+shift/reduce conflict for INCR in state 52 resolved as shift
+shift/reduce conflict for ADD in state 52 resolved as shift
+shift/reduce conflict for INFEQL in state 52 resolved as shift
+shift/reduce conflict for INF in state 52 resolved as shift
+shift/reduce conflict for LSHIFT in state 52 resolved as shift
+shift/reduce conflict for RSHIFT in state 52 resolved as shift
+shift/reduce conflict for SUP in state 52 resolved as shift
+shift/reduce conflict for SUPEQL in state 52 resolved as shift
+shift/reduce conflict for PTRACCSS in state 52 resolved as shift
+shift/reduce conflict for MEMBACCSS in state 52 resolved as shift
+reduce/reduce conflict in state 2 resolved using rule statement -> expr
+rejected rule (expr -> expr) in state 2
+reduce/reduce conflict in state 34 resolved using rule expr -> BNOT expr
+rejected rule (expr -> expr) in state 34
+reduce/reduce conflict in state 35 resolved using rule expr -> NEW expr
+rejected rule (expr -> expr) in state 35
+reduce/reduce conflict in state 36 resolved using rule expr -> NOT expr  [precedence=left, level=5]
+rejected rule (expr -> expr) in state 36
+reduce/reduce conflict in state 38 resolved using rule expr -> expr EQL expr  [precedence=left, level=2]
+rejected rule (expr -> expr) in state 38
+reduce/reduce conflict in state 39 resolved using rule expr -> expr BOR expr
+rejected rule (expr -> expr) in state 39
+reduce/reduce conflict in state 40 resolved using rule expr -> expr BAND expr
+rejected rule (expr -> expr) in state 40
+reduce/reduce conflict in state 41 resolved using rule expr -> expr XOR expr
+rejected rule (expr -> expr) in state 41
+reduce/reduce conflict in state 42 resolved using rule expr -> expr OR expr  [precedence=left, level=1]
+rejected rule (expr -> expr) in state 42
+reduce/reduce conflict in state 43 resolved using rule expr -> expr AND expr  [precedence=left, level=1]
+rejected rule (expr -> expr) in state 43
+reduce/reduce conflict in state 44 resolved using rule expr -> expr MOD expr
+rejected rule (expr -> expr) in state 44
+reduce/reduce conflict in state 45 resolved using rule expr -> expr DIV expr  [precedence=left, level=4]
+rejected rule (expr -> expr) in state 45
+reduce/reduce conflict in state 46 resolved using rule expr -> expr MUL expr  [precedence=left, level=4]
+rejected rule (expr -> expr) in state 46
+reduce/reduce conflict in state 47 resolved using rule expr -> expr SUB expr  [precedence=left, level=3]
+rejected rule (expr -> expr) in state 47
+reduce/reduce conflict in state 48 resolved using rule expr -> expr ADD expr  [precedence=left, level=3]
+rejected rule (expr -> expr) in state 48
+reduce/reduce conflict in state 49 resolved using rule expr -> expr INFEQL expr  [precedence=left, level=2]
+rejected rule (expr -> expr) in state 49
+reduce/reduce conflict in state 50 resolved using rule expr -> expr INF expr  [precedence=left, level=2]
+rejected rule (expr -> expr) in state 50
+reduce/reduce conflict in state 51 resolved using rule expr -> expr LSHIFT expr
+rejected rule (expr -> expr) in state 51
+reduce/reduce conflict in state 52 resolved using rule expr -> expr RSHIFT expr
+rejected rule (expr -> expr) in state 52
+reduce/reduce conflict in state 53 resolved using rule expr -> expr SUP expr  [precedence=left, level=2]
+rejected rule (expr -> expr) in state 53
+reduce/reduce conflict in state 54 resolved using rule expr -> expr SUPEQL expr  [precedence=left, level=2]
+rejected rule (expr -> expr) in state 54
+reduce/reduce conflict in state 55 resolved using rule expr -> expr PTRACCSS expr  [precedence=left, level=6]
+rejected rule (expr -> expr) in state 55
+reduce/reduce conflict in state 56 resolved using rule expr -> expr MEMBACCSS expr  [precedence=left, level=6]
+rejected rule (expr -> expr) in state 56
+Rule (expr -> expr) is never reduced

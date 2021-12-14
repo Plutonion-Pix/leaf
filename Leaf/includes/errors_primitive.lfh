@@ -1,0 +1,56 @@
+#incl std
+
+
+class BaseException {
+	const char* info
+	BaseException(const char* info) : info(info) {}
+}
+
+	class Exception(BaseException)
+
+		class ValueError(Exception)
+		class SizeError(Exception)
+		class TypeError(Exception)
+		class ArgumentError(Exception)
+		class DefinitionError(Exception)
+		class NameError(Exception)
+		class SyntaxError(Exception)
+		class SegmentationFaultRiskError(Exception)
+		class ArithmeticError(Exception)
+		class ValueError(Exception)
+
+bool __std_in_try = false
+BaseException* __std_exception_handler = nullptr
+
+
+void throw(const char* expression) {
+	if (__std_in_try) {
+		__std_exception_handler = new Exception(expression)
+	} else {
+		printf("")
+		exit(1)
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

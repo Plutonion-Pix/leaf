@@ -1,0 +1,62 @@
+#include std
+#include ltypes
+#include errors_primitive
+#include args
+
+
+
+template T
+class list(Iterator) {
+	uint length
+	T* values
+	list(uint size=0) : length(size) {
+		if (size > 0) {
+			this->values = (T*) calloc(size,sizeof(T))
+		}
+	}
+
+	list() : length(0), values(NULL)
+
+	byte reserve(uint size=1) {
+		if (size > 0) {
+			this->values = (T*) calloc(this->length + size,sizeof(T))
+		}
+	}
+
+	list(T* arr, uint size) {
+		reserve(size)
+		memcpy(this->values,arr,size)
+	}
+
+	~list() {
+		free(this->values)
+	}	
+
+	T __getitem__(uint value) {
+		#ifndef GET_INDEX_UNSURE
+			return this->values[value]
+		#else
+			if (values >= length)
+		#endif
+	}
+
+	list<T> __getitem__(Slice slice) {
+		slice.unsign(this->values,this->length)
+		list<T> buff(size = (slice.stop-slice.start)/slice.step)
+		for (;slice.start<slice.end;slice.start += slice.step) {
+			buff.append(this->values[slice.start])
+		}
+		return buff
+	}
+}
+
+
+_anyopdecl(1) operator+()
+
+
+
+
+
+
+
+

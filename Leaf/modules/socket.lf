@@ -1,0 +1,78 @@
+extern C {
+#if defined(_WIN32) || defined(WIN32)
+	#include <winsock2.h>
+	#define closesocket(param) close(param)
+#else
+	#include <sys/types.h>
+	#include <sys/socket.h>
+	#include <netinet/in.h>
+	#include <arpa/inet.h>
+	#include <unistd.h>
+	#define INVALID_SOCKET -1
+	#define SOCKET_ERROR -1
+	#define closesocket(param) close(param)
+
+	typedef int SOCKET;
+	typedef struct sockaddr_in SOCKADDR_IN;
+	typedef struct sockaddr SOCKADDR;
+#endif
+}
+#include std
+#include ltypes
+#include lists
+#include strings
+
+#ifdef _WIN32
+#ifdef _MSC_VER
+#pragma comment("ws2_32.lib")
+#else
+#pragma comment("libws2_32.a")
+#endif
+#endif
+
+
+#FUNFIX close
+#FUNFIX 
+
+
+// IPv4
+#CONSTFIX AF_INET
+// IPv6
+#CONSTFIX AF_INET6
+// TCP
+#CONSTFIX SOCK_STREAM
+// UDP
+#CONSTFIX SOCK_DGRAM
+
+#CONSTFIX SOL_SOCKET
+#CONSTFIX SO_REUSEADDR
+#CONSTFIX SO_REUSEPORT
+
+
+
+
+class Socket {
+
+}
+
+
+
+main() {
+	extern C {
+#ifdef _WIN32
+WSADATA WSAData;
+WSAStartup(MAKEWORD(2,2), &WSAData);
+#endif
+	}
+}
+
+
+~main() {
+	extern C {
+#ifdef _WIN32
+WSACleanup();
+#endif
+	}
+}
+
+
